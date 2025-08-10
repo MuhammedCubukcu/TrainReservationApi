@@ -22,33 +22,33 @@ Bu proje, tren rezervasyon iþlemlerini yönetmek için geliþtirilmiþ bir .NET 8 We
 
 1. Repoyu klonlayýn:
 
-````````bash
-git clone https://github.com/kullaniciadi/proje-adi.git
-````````
+    ```bash
+    git clone https://github.com/MuhammedCubukcu/TrainReservationApi.git
+    ```
 
 2. Proje dizinine gidin:
 
-````````bash
-cd proje-adi
-````````
+    ```bash
+    cd TrainReservationApi
+    ```
 
 3. Gerekli baðýmlýlýklarý yükleyin:
 
-````````bash
-dotnet restore
-````````
+    ```bash
+    dotnet restore
+    ```
 
 4. Veritabaný migrasyonlarýný uygulayýn:
 
-````````bash
-dotnet ef database update
-````````
+    ```bash
+    dotnet ef database update
+    ```
 
 5. Uygulamayý baþlatýn:
 
-````````bash
-dotnet run
-````````
+    ```bash
+    dotnet run
+    ```
 
 API, varsayýlan olarak `https://localhost:5001` adresinde çalýþacaktýr.
 
@@ -87,6 +87,6 @@ Swagger UI entegrasyonu sayesinde, API dökümantasyonu otomatik olarak oluþturulm
 
 ## Ýletiþim
 
-Proje Sorumlusu - [@github_username](https://github.com/github_username)
+Proje Sorumlusu - [@MuhammedCubukcu](https://github.com/MuhammedCubukcu)
 
-Proje Linki: [https://github.com/username/repo](https://github.com/username/repo)
+Proje Linki: [https://github.com/MuhammedCubukcu/TrainReservationApi](https://github.com/MuhammedCubukcu/TrainReservationApi)
