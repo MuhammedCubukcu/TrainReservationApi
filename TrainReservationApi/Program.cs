@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS politikasý ekleme
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// JSON döngüsel referans sorununu çözmek için
+
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -33,11 +33,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// PostgreSQL baðlantýsý
+
 builder.Services.AddDbContext<ReservationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("TrainReservationDb"));
-    // Development ortamýnda detaylý hata mesajlarý için
+    
     if (builder.Environment.IsDevelopment())
     {
         options.EnableSensitiveDataLogging();
@@ -49,7 +49,6 @@ builder.Services.AddScoped<IRezervasyonService, RezervasyonService>();
 
 var app = builder.Build();
 
-// Swagger her ortamda kullanýlabilir olsun
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
@@ -61,7 +60,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-// Veritabaný migration'larý otomatik uygula
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ReservationDbContext>();
